@@ -39,15 +39,8 @@ String Color[] = {"RED","BLUE","GREEN","NONE"};
       System.out.print("Circle Color: ");
       Circle c = new Circle();
       
-
-
-      
-      
       t.Triangle();
       t.toString();
-      
-
-      
       
       c.getArea();
       c.toString();
