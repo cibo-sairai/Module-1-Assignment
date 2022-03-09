@@ -1,4 +1,4 @@
-//2/17/2022
+//3/09/2022
 //TwoDShape Class in Module 1 Assignment
 
 
@@ -6,45 +6,90 @@ package Inheritance_Programs;
 
 import java.lang.Math.*;
 import java.util.Random;
-public class TwoDShape
+public class TwoDShape implements Rotate
 {
-//main class for module 1 assignment
+double width, height;
 
-String Color[] = {"RED","BLUE","GREEN","NONE"};
+//main class for module 1 assignment
+   enum Color
+   {
+      RED,
+      GREEN,
+      BLUE
+   }
+
+   public TwoDShape(double width, double height)
+   {
+      //constructor
+      Color c = Color.RED;
+      System.out.println(c);
+   }
    public TwoDShape()
    {
-   //constructor
-   
-   Random r = new Random();
-   int rand = r.nextInt(4);
-   System.out.println(Color[rand]);
-   int width;
-   double height;
    }
-   public double getArea(int sideA, int sideB)
+
+
+   public static double getArea(int sideA, int sideB)
    {
+
    //area
       return ((sideA^2)*(sideB^2));
    }
    public void setHeight(double h)
    {
-   
+      h = 4;
    }
+/*
+ * Implementation of "Rotate.java" */
+   @Override
+   public void rotate(double degree)
+   {
+      System.out.println(degree);
+   }
+   
+   @Override
+   public void rotate90()
+   {
+      System.out.println("-" + width + ", " + height);
+   }
+   
+   @Override
+   public void rotate180()
+   {
+      System.out.println("-" + width + ", -" + height);
+   }
+/*
+ *  */
    public static void main(String[] args)
    {
-      System.out.print("TwoDShape Color: ");
-      new TwoDShape();
-      System.out.print("Triangle Color: ");
+   //method calls, main method
+      
+      System.out.println("Module 1 Program");
+      System.out.println("TwoDShape Class Area Method ");
+      double a_r = getArea(4,5);
+      System.out.println("Rectangle Area: " + a_r);
+
+      
       Triangle t = new Triangle();
-      System.out.print("Circle Color: ");
-      Circle c = new Circle();
-      
+
       t.Triangle();
-      t.toString();
+
+      double a = t.getArea(3,4);
+      System.out.println("Area of Triangle: " + a);
+      String v = t.toString();
+      System.out.println(v);
       
-      c.getArea();
-      c.toString();
+      
+      Circle c = new Circle(3);
+      
+      double a_c = c.getArea(3,4);
+      System.out.println("Area of Circle: " + a_c);
+      String c_s = c.toString();
+      System.out.println(c_s);
+      
+
       
    }
 }
+
 
