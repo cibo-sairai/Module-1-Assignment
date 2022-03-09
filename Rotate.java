@@ -1,15 +1,14 @@
 
-package Inheritance_Programs;
 
-public class Rotate extends Triangle
+package Inheritance_Programs;
+// rotate interface in Module 1 Assignment
+interface Rotate
 {
-   public void rotate90()
-   {
-   }
-   public void rotate180()
-   {
-   }
-   public Rotate(double degree)
-   {
-   }
+   void rotate90();
+
+   void rotate180();
+
+   void rotate(double degree);
+
+
 }
